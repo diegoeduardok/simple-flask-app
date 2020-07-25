@@ -123,3 +123,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Data used to train, test, and validate model
+model-data/
