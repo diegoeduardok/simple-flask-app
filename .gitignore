@@ -126,3 +126,6 @@ dmypy.json
 
 #Data used to train, test, and validate model
 model-data/
+
+#OS files
+.DS_Store
