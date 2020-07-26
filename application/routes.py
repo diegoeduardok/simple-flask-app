@@ -19,7 +19,7 @@ def which_animal(prediction):
 	else:
 		return "non-identified animal :/"
 
-def clear_updates(path=upload_path):
+def clear_uploads(path=upload_path):
 	if not os.path.exists(path):
 		os.makedirs(path)
 
@@ -33,7 +33,7 @@ def clear_updates(path=upload_path):
 def index():
 
 	#get rid of previous images and create uploads
-	clear_updates()
+	clear_uploads()
 
 	return render_template("index.html", index=True)
 
@@ -41,7 +41,7 @@ def index():
 def application():
 
 	#get rid of previous images
-	clear_updates()
+	clear_uploads()
 
 	form = UploadForm()
 	animal = None 
