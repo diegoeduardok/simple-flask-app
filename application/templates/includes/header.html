@@ -1,0 +1,12 @@
+<header>
+    <nav>
+        <ul class="nav nav-pills">
+
+            <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if index %} active {% endif %}">Usage</a></li>
+
+            <li class="nav-item"><a href="{{ url_for('application') }}" class="nav-link {% if application %} active {% endif %}">Application</a></li>
+
+        </ul>
+    </nav>
+    <hr style="clear:both">
+</header>
