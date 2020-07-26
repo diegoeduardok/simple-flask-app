@@ -22,7 +22,7 @@
 		    {{ form.hidden_tag() }}
 		    
 		    <p>
-		    	{{ form.photo(multiple="multiple") }}
+		    	{{ form.photo() }}
 		    	{% for error in form.photo.errors %}
 		        	<span class="error-message">{{ error }}</span>
 		    	{% endfor %}
