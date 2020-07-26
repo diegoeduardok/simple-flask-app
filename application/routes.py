@@ -12,9 +12,9 @@ configure_uploads(app, photos)
 patch_request_class(app)  # set maximum file size, default is 16MB
 
 def which_animal(prediction):
-	if prediction['cat'] > 0.9:
+	if prediction['cat'] > 0.8:
 		return "cat"
-	elif prediction['dog'] > 0.9:
+	elif prediction['dog'] > 0.8:
 		return "dog"
 	else:
 		return "non-identified animal :/"
