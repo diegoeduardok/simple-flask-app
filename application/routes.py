@@ -5,6 +5,7 @@ from application import app
 from flask import render_template, redirect, url_for, request, flash
 from flask_uploads import UploadSet, configure_uploads, patch_request_class
 from application.forms import UploadForm, photos
+from application.secrets import upload_path #set upload path as appropriate
 from model.load import predict
 
 configure_uploads(app, photos)
@@ -18,7 +19,10 @@ def which_animal(prediction):
 	else:
 		return "non-identified animal :/"
 
-def clear_updates(path="/Users/diegoeduardo/Documents/GitHub/simple-flask-app/application/uploads"):
+def clear_updates(path=upload_path):
+	if not os.path.exists(path):
+		os.makedirs(path)
+
 	previous = glob(path + '/*')
 	for f in previous:
 		os.remove(f)
@@ -28,7 +32,7 @@ def clear_updates(path="/Users/diegoeduardo/Documents/GitHub/simple-flask-app/ap
 @app.route("/usage")
 def index():
 
-	#get rid of previous images
+	#get rid of previous images and create uploads
 	clear_updates()
 
 	return render_template("index.html", index=True)
