@@ -23,7 +23,7 @@ def clear_uploads(path=upload_path):
 	if not os.path.exists(path):
 		os.makedirs(path)
 
-	previous = glob(path + '/*')
+	previous = glob(os.path.join(path, '*'))
 	for f in previous:
 		os.remove(f)
 
